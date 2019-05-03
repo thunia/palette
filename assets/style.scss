@@ -1,0 +1,220 @@
+*, 
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+
+  background: url(../assets/img/transp_bg.png);
+
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;  
+}
+
+.header {
+  height: 50px;
+  padding: 10px 40px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .15);
+
+  background: #fff;
+}
+
+  h1 {
+    margin: 0;
+
+    font-size: 22px;
+  }
+
+.wrapper {  
+  height: calc(100vh - 50px);
+  min-height: 600px;
+  padding: 40px; 
+}
+
+  .container {
+    display: flex;
+    max-width: 1024px;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  .sidebar {
+    width: 228px;
+    margin-right: 50px;    
+  }
+
+    .tools-panel {
+      box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.12);
+      border-radius: 5px;
+      padding: 20px;  
+      
+      background: #fff;
+      
+      color: rgba(0, 0, 0, 0.5413); 
+
+      &__item {
+        display: block;
+        border-radius: 5px;
+        padding: 5px 10px;        
+
+        font-weight: 700;
+
+        cursor: pointer;
+        transition: background-color 0.25s;
+        
+        &:not(:first-child) {
+          margin-top: 10px;
+        }
+
+        &.-selected,
+        &:hover {
+          background: #eff0f3;
+
+          transition: background-color 0.25s;
+        }
+
+        img, span {
+          display: inline-block;
+
+          vertical-align: middle;
+        }
+
+        img {
+          margin-right: 20px;
+        }
+      }
+    }
+
+    .color-panel {
+      box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.12);
+      border-radius: 5px;
+      padding: 20px; 
+      margin-top: 20px;   
+
+      background: #fff;
+      
+      color: rgba(0, 0, 0, 0.5413); 
+
+      &__item {
+        display: block;
+        border-radius: 5px;
+        padding: 5px 10px;               
+        
+        &:not(:first-child) {
+          margin-top: 10px;
+        }        
+
+        img, span {
+          display: inline-block;
+
+          vertical-align: middle;
+        }
+
+        img {
+          margin-right: 20px;
+        }
+      }
+
+      &__color {
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        border: 1px solid transparent;
+        margin-right: 20px;
+
+        transition: box-shadow 0.25s;
+
+        [data-tool=colorPicker] & {
+          cursor: url('../assets/img/color-icon.svg') 0 10, auto;	
+
+          &:hover {
+            box-shadow: 0 0 0 3px rgba(#6E6E70, 0.5);
+            transition: box-shadow 0.25s;
+          }
+        }        
+      }
+    }
+
+  .button {
+    height: 40px;
+    width: 228px;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.12);
+    padding: 10px 25px;
+    border: 0;
+    margin-top: 20px;
+
+    font-weight: 700;
+    font-size: 16px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    color: rgba(0, 0, 0, 0.5413);
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    transition: box-shadow 0.25s;
+
+    &:hover {
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+      transition: box-shadow 0.25s;
+    }
+  }
+
+  .canvas {
+    width: calc(100% - 278px);
+
+    &__container {
+      display: flex;
+      width: 500px;
+      height: 500px;
+      margin: -10px auto; 
+      flex-wrap: wrap;
+    }
+
+      &__cell {
+        width: calc(33.333% - 20px);
+        height: calc(33.333% - 20px);
+        // box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.12);
+        border-radius: 5px;
+        margin: 10px;
+      }
+
+        &__figure {
+          width: 100%;
+          height: 100%;
+          border-radius: 5px;          
+
+          background: #eff0f3;
+
+          transition: all 0.25s;
+
+          &.-rounded {
+            border-radius: 100%;
+            transition: border-radius 0.25s;
+          }
+
+          &.over {
+            border: 2px dashed #000;
+          }
+
+          [data-tool=transform] & {
+            cursor: url('../assets/img/transform-icon.svg'), auto;	
+          }
+
+          [data-tool=paintBucket] & {
+            cursor: url('../assets/img/bucket-icon.svg'), auto;	
+          }
+
+          [data-tool=colorPicker] & {
+            cursor: url('../assets/img/color-icon.svg') 0 10, auto;	
+          }
+
+          [data-tool=move] & {
+            cursor: url('../assets/img/move-icon.svg'), auto;	
+          }
+        }
+  }

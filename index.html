@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Code Jam Palette</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+</head>
+
+<body>
+  <header class="header">    
+    <h1>CodeJam - Palette</h1>    
+  </header>
+  <div class="wrapper">
+    <div class="container">
+      <aside class="sidebar">
+        <div class="tools-panel">
+          <div class="tools-panel__list">
+            <span class="tools-panel__item" data-tool="paintBucket" title="or press P">
+              <img src="assets/img/bucket-icon.svg" alt="">Paint Bucket (P)
+            </span>
+            <span class="tools-panel__item" data-tool="colorPicker" title="or press C">
+              <img src="assets/img/color-icon.svg" alt="">Choose Color (C)
+            </span>
+            <span class="tools-panel__item" data-tool="move" title="or press M">
+              <img src="assets/img/move-icon.svg" alt="">Move (M)
+            </span>
+            <span class="tools-panel__item" data-tool="transform" title="or press T">
+              <img src="assets/img/transform-icon.svg" alt="">Transform (T)
+            </span>
+          </div>
+        </div>
+        <div class="color-panel">
+          <div class="color-panel__list">
+            <span class="color-panel__item">
+              <span class="color-panel__color" id="current-color" style="background-color: #41F795;"></span>Current Color
+            </span>
+            <span class="color-panel__item">
+              <span class="color-panel__color" id="prev-color" style="background-color: #eff0f3;"></span>Prev Color
+            </span>
+            <span class="color-panel__item">
+              <span class="color-panel__color" style="background-color: #F74141;"></span>Red 
+            </span>
+            <span class="color-panel__item">
+              <span class="color-panel__color" style="background-color: #41B6F7;"></span>Blue
+            </span>
+          </div>
+        </div>
+        <button class="button" id="clear-button" type="button">Clear and Reload</button>
+      </aside>
+      <div class="canvas">
+        <div class="canvas__container">
+          <div class="canvas__cell">
+            <div class="canvas__figure"></div>
+          </div>
+          <div class="canvas__cell">
+            <div class="canvas__figure"></div>
+          </div>
+          <div class="canvas__cell">
+            <div class="canvas__figure"></div>
+          </div>
+          <div class="canvas__cell">
+            <div class="canvas__figure"></div>
+          </div>
+          <div class="canvas__cell">
+            <div class="canvas__figure"></div>
+          </div>
+          <div class="canvas__cell">
+            <div class="canvas__figure"></div>
+          </div>
+          <div class="canvas__cell">
+            <div class="canvas__figure"></div>
+          </div>
+          <div class="canvas__cell">
+            <div class="canvas__figure"></div>
+          </div>
+          <div class="canvas__cell">
+            <div class="canvas__figure"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="assets/index.js"></script>
+</body>
+
+</html>
